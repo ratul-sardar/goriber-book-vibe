@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <section className="">
-      <div className="w-11/12 mx-auto py-16 lg:py-20 xl:py-28 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="container w-11/12 mx-auto py-16 lg:py-20 xl:py-28 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
         {productData.map((product) => (
           <ProductCard key={product.bookId} product={product}></ProductCard>
         ))}

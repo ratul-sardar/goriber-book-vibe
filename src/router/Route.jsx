@@ -14,11 +14,12 @@ const route = createBrowserRouter([
       },
       {
         path: "/bookDetails/:id",
+        loader: ({ params }) => fetch("/booksData.json"),
         Component: DetailsPage,
       },
     ],
     errorElement: (
-      <h1 className="text-4xl text-red-600">
+      <h1 className="text-4xl text-red-600 mx-auto mt-[20%]">
         Yo, app crushed Nigga! Do something Nigga!
       </h1>
     ),

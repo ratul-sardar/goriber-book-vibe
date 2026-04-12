@@ -1,4 +1,5 @@
 import { FaRegStar } from "react-icons/fa";
+import { NavLink } from "react-router";
 
 export default function ProductCard({ product }) {
   const {
@@ -16,7 +17,10 @@ export default function ProductCard({ product }) {
   } = product;
 
   return (
-    <div className="card card-md bg-base-100 w-full rounded-2xl border border-[#F3F3F3] shadow-sm">
+    <NavLink
+      to={`/bookDetails/${bookId}`}
+      className="card card-md bg-base-100 w-full rounded-2xl border border-[#F3F3F3] shadow-sm"
+    >
       <div className="card-body items-left">
         <figure className="rounded-2xl p-10  bg-[#F3F3F3] mb-4 ">
           <img src={image} alt="Shoes" className="h-90" />
@@ -45,6 +49,6 @@ export default function ProductCard({ product }) {
           </div>
         </div>
       </div>
-    </div>
+    </NavLink>
   );
 }

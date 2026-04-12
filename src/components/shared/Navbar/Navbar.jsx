@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="relative w-11/12 py-6 mx-auto flex justify-between items-center gap-8">
+    <nav className="relative container w-11/12 py-6 mx-auto flex justify-between items-center gap-8">
       {/* Brand Logo */}
       <div className="min-w-fit">
         <h4 className="text-xl font-bold">Brand Logo</h4>
@@ -22,19 +23,17 @@ const Navbar = () => {
         {/* Site Links */}
         <ul className="w-full flex gap-4 justify-center">
           <li>
-            <a href="#" className="hover:text-blue-600">
-              Home
-            </a>
+            <NavLink className="hover:text-blue-600">Home</NavLink>
           </li>
           <li>
-            <a href="#" className="hover:text-blue-600">
-              About
-            </a>
+            <NavLink href="#" className="hover:text-blue-600">
+              Listed Books
+            </NavLink>
           </li>
           <li>
-            <a href="#" className="hover:text-blue-600">
-              More
-            </a>
+            <NavLink href="#" className="hover:text-blue-600">
+              Pages To Read
+            </NavLink>
           </li>
         </ul>
 
