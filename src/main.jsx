@@ -1,21 +1,18 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router";
-import Root from "./components/layouts/Root";
-import Home from "./pages/Home";
+import { RouterProvider } from "react-router";
+import Route from "./router/Route";
+import { ProductDataContext } from "./context/ProductDataContext";
+import productData from "./data/booksData.json";
 
 // Router creation
-const router = createBrowserRouter([
-  {
-    path: "/",
-    Component: Root,
-    children: [{ index: true, Component: Home }],
-  },
-]);
+const router = Route;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <ProductDataContext value={productData}>
+      <RouterProvider router={router}></RouterProvider>
+    </ProductDataContext>
   </StrictMode>,
 );

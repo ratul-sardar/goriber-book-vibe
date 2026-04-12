@@ -9,9 +9,6 @@ const Root = () => {
         <Navbar></Navbar>
       </header>
       <main className="">
-        <h1 className="text-red-500 font-bold text-2xl">
-          hi, im from the react router
-        </h1>{" "}
         <Outlet></Outlet>
       </main>
       <footer className=""></footer>

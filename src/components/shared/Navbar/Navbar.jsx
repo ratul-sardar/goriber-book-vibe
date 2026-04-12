@@ -11,7 +11,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="relative w-11/12 py-6 container mx-auto flex justify-between items-center gap-8">
+    <nav className="relative w-11/12 py-6 mx-auto flex justify-between items-center gap-8">
       {/* Brand Logo */}
       <div className="min-w-fit">
         <h4 className="text-xl font-bold">Brand Logo</h4>
