@@ -5,7 +5,7 @@ import { Outlet } from "react-router";
 const Root = () => {
   return (
     <>
-      <header className="sticky top-0 bg-base-100 border-b-2 border-base-300">
+      <header className="sticky top-0 z-90 bg-base-100 border-b-2 border-base-300">
         <Navbar></Navbar>
       </header>
       <main className="">

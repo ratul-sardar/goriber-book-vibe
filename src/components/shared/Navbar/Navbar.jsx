@@ -3,6 +3,21 @@ import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { NavLink } from "react-router";
 
+const navLinks = [
+  {
+    name: "Home",
+    link: "/",
+  },
+  {
+    name: "Listed Books",
+    link: "/listedBooks",
+  },
+  {
+    name: "Pages To Read",
+    link: "/",
+  },
+];
+
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -22,19 +37,7 @@ const Navbar = () => {
       <div className="hidden w-full lg:flex items-center justify-between">
         {/* Site Links */}
         <ul className="w-full flex gap-4 justify-center">
-          <li>
-            <NavLink className="hover:text-blue-600">Home</NavLink>
-          </li>
-          <li>
-            <NavLink href="#" className="hover:text-blue-600">
-              Listed Books
-            </NavLink>
-          </li>
-          <li>
-            <NavLink href="#" className="hover:text-blue-600">
-              Pages To Read
-            </NavLink>
-          </li>
+          <NavbarLinks></NavbarLinks>
         </ul>
 
         {/* Cta */}
@@ -56,21 +59,7 @@ const Navbar = () => {
           <div className="w-full flex flex-col items-center gap-8">
             {/* Site Links */}
             <ul className="w-full space-y-4">
-              <li>
-                <a href="#" className="hover:text-blue-600">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-blue-600">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-blue-600">
-                  More
-                </a>
-              </li>
+              <NavbarLinks></NavbarLinks>
             </ul>
 
             {/* Cta */}
@@ -86,3 +75,13 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+function NavbarLinks() {
+  return navLinks.map((link) => (
+    <li key={link.name}>
+      <NavLink to={link.link} className="hover:text-blue-600">
+        {link.name}
+      </NavLink>
+    </li>
+  ));
+}
