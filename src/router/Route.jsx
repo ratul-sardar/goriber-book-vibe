@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import Home from "../pages/Home";
 import Root from "../components/layouts/Root";
+import DetailsPage from "../pages/DetailsPage";
 
 const route = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ const route = createBrowserRouter([
       {
         index: true,
         Component: Home,
+      },
+      {
+        path: "/bookDetails/:id",
+        Component: DetailsPage,
       },
     ],
     errorElement: (
