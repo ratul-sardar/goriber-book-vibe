@@ -1,7 +1,15 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router";
 import { useParams } from "react-router";
+import ListedBooksContext from "../context/ListedBooksContext";
 
 export default function DetailsPage() {
+  //
+  const { handleAddToReadBooks, wishList, handleAddToWishList } =
+    useContext(ListedBooksContext);
+  //
+  console.log("read books: ", " ", "wish List", wishList);
+
   // To get the unique book id from the params
   const idForBook = useParams();
 
@@ -71,8 +79,18 @@ export default function DetailsPage() {
           </div>
 
           <div className="flex gap-4">
-            <button className="btn">Read</button>
-            <button className="btn btn-accent text-white">Wishlist</button>
+            <button
+              className="btn"
+              onClick={() => handleAddToReadBooks(book[0])}
+            >
+              Read
+            </button>
+            <button
+              className="btn btn-accent text-white"
+              onClick={() => handleAddToWishList(book[0])}
+            >
+              Wishlist
+            </button>
           </div>
         </div>
       </div>
