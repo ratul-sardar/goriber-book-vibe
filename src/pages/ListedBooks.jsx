@@ -1,9 +1,13 @@
 import { useContext } from "react";
-import ListedBooksContext from "../context/ListedBooksContext";
+import ListedBooksContext, {
+  BooksContext,
+} from "../context/ListedBooksContext";
 
 export default function ListedBooks() {
   const { readBooks, handleAddToReadBooks, wishList, handleAddToWishList } =
-    useContext(ListedBooksContext);
+    useContext(BooksContext);
+
+  console.log("read books: ", readBooks);
   return (
     <section className="">
       <div className="container w-11/12 mx-auto py-16 lg:py-20 xl:py-28  space-y-6">

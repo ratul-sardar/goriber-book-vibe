@@ -4,7 +4,6 @@ import { ProductDataContext } from "../context/ProductDataContext";
 
 export default function Home() {
   const productData = useContext(ProductDataContext);
-  console.log(productData);
 
   return (
     <section className="">

@@ -1,17 +1,17 @@
 import { createContext, useState } from "react";
 
-const BooksContext = createContext("");
+export const BooksContext = createContext("");
 
 export default function ListedBooksContext({ children }) {
   const [readBooks, setReadBooks] = useState([]);
   const [wishList, setWishList] = useState([]);
 
   function handleAddToReadBooks(book) {
-    setReadBooks([...book, readBooks]);
+    setReadBooks([...readBooks, book]);
   }
 
   function handleAddToWishList(book) {
-    setWishList([...book, wishList]);
+    setWishList([...wishList, book]);
   }
 
   return (
